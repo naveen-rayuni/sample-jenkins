@@ -9,5 +9,5 @@ services:
       - /app/node_modules
     ports:
       - "3000:3000" # specify port forwarding
-    container_name: client-container
+    container_name: frontend-container
     restart: unless-stopped
