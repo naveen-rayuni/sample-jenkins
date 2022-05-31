@@ -1,0 +1,13 @@
+version: '3' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  frontend: #name of the first service
+    build: ./client # specify the directory of the Dockerfile
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000" # specify port forwarding
+    container_name: client-container
+    restart: unless-stopped
