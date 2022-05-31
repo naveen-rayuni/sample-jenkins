@@ -4,10 +4,7 @@ pipeline {
         stage('verify tooling') {
             steps {
                 sh '''
-                    docker version
-                    docker info
-                    docker-compose version
-                    curl --version
+                    docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
                 '''
             }
         }
